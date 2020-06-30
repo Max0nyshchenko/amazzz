@@ -1,0 +1,21 @@
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.formats": [
+    // This is Default.
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/frontend/src/"
+    },
+    // You can add more
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/frontend/src/"
+    }
+  ],
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
+}
