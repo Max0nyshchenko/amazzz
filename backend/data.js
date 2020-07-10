@@ -8,6 +8,7 @@ export default {
       brand: "Nike",
       rating: 4.5,
       numReviews: 10,
+      countInStock: 6,
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ export default {
       brand: "Abibas",
       rating: 4.9,
       numReviews: 1210,
+      countInStock: 6,
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ export default {
       brand: "Nike",
       rating: 5.0,
       numReviews: 10899,
+      countInStock: 9,
     },
   ],
 };
