@@ -40,7 +40,6 @@ export default function CartScreen(props) {
             cartItems.map((item, idx) => {
               return (
                 <li key={idx}>
-                  {console.log(item)}
                   <div className="cart-image">
                     <img src={item.image} alt="product" />
                   </div>
@@ -53,8 +52,6 @@ export default function CartScreen(props) {
                       <select
                         value={item.qty}
                         onChange={(e) => {
-                          console.log(item.product, "value:", e.target.value);
-                          console.log(addToCart(item.product, e.target.value));
                           dispatch(addToCart(item.product, e.target.value));
                         }}
                       >

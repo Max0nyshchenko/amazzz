@@ -15,10 +15,12 @@ const addToCart = (productId, qty) => async (dispatch) => {
         image: data.img,
         price: data.price,
         countInStock: data.countInStock,
-        qty,
+        qty: qty,
       },
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const removeFromCart = (productId) => (dispatch) => {
