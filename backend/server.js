@@ -1,17 +1,33 @@
 import express from "express";
 import data from "./data";
+import config from "./config";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import userRoute from "./routes/userRoute";
+
+dotenv.config();
+
+const mongodbUrl = config.MONGODB_URL;
+mongoose
+  .connect(mongodbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .catch((error) => console.log(error.reason));
 
 const app = express();
 
+app.use("/api/users", userRoute);
 app.get("/api/products/:id", (req, res) => {
-  const productId = req.params.id
-  const product = data.products.find(item => item.id == productId)
-  console.log(data.products)
-  console.log("product:",product)
-  if(product) {
-  res.send(product);
+  const productId = req.params.id;
+  const product = data.products.find((item) => item.id == productId);
+  console.log(data.products);
+  console.log("product:", product);
+  if (product) {
+    res.send(product);
   } else {
-    res.status(404).send({msg: 'product not found'})
+    res.status(404).send({ msg: "product not found" });
   }
 });
 app.get("/api/products", (req, res) => {
