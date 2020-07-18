@@ -4,6 +4,7 @@ import config from "./config";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import router from "./routes/userRoute";
+import bodyParser from "body-parser";
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ mongoose
   .catch((error) => console.log(error.reason));
 
 const app = express();
-
+app.use(bodyParser.json());
 app.use("/api/users", router);
 app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
