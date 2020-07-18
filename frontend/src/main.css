@@ -34,7 +34,7 @@ body {
   margin: 0;
 }
 
-button {
+.button {
   font-size: 1.6rem;
 }
 
@@ -291,8 +291,16 @@ button {
   margin-bottom: 1rem;
 }
 
-button.primary {
+.button.primary {
   background-color: #ff9e3c;
+}
+
+.button.secondary {
+  background-color: #f0f0f0;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .back-to-result {
@@ -369,4 +377,49 @@ button.primary {
   -webkit-box-flex: 8;
       -ms-flex: 8 1;
           flex: 8 1;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 32rem;
+  padding: 2rem;
+  border: 0.1rem solid #c0c0c0;
+  border-radius: 0.5rem;
+  list-style-type: none;
+}
+
+.form-container li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-container input {
+  padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
 }

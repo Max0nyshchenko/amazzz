@@ -3,7 +3,7 @@ import data from "./data";
 import config from "./config";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import userRoute from "./routes/userRoute";
+import router from "./routes/userRoute";
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ mongoose
 
 const app = express();
 
-app.use("/api/users", userRoute);
+app.use("/api/users", router);
 app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
   const product = data.products.find((item) => item.id == productId);
