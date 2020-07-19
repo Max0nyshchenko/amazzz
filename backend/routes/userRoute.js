@@ -3,11 +3,12 @@ import User from "../models/userModel";
 
 const router = express.Router();
 
-router.post("signin", async (req, res) => {
+router.post("/signin", async (req, res) => {
   const signinUser = await User.findOne({
     email: req.body.email,
     password: req.body.password,
   });
+  console.error("SIGNIN USER:", signinUser);
   if (signinUser) {
     res.send({
       id: signinUser.id,

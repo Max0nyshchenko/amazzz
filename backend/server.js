@@ -23,8 +23,6 @@ app.use("/api/users", router);
 app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
   const product = data.products.find((item) => item.id == productId);
-  console.log(data.products);
-  console.log("product:", product);
   if (product) {
     res.send(product);
   } else {
