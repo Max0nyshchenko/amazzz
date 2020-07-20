@@ -10,10 +10,13 @@ export default function SigninScreen(props) {
   const userSignin = useSelector((state) => state.userSignin);
   const { loading, userInfo, error } = userSignin;
   const dispatch = useDispatch();
+  console.log(userSignin);
 
   useEffect(() => {
+    console.log(userInfo);
     if (userInfo) {
-      props.history.push("/");
+      console.log(userInfo);
+      // props.history.push("/");
     }
     return () => {
       //  cleanup
@@ -26,7 +29,7 @@ export default function SigninScreen(props) {
 
   return (
     <div className="form">
-      <form onSubmit={submitHandler}>
+      <form method="POST" onSubmit={submitHandler}>
         <ul className="form-container">
           <li>
             <h2>Sign In</h2>
